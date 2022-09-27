@@ -1,0 +1,30 @@
+package pomPages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class AddtoCartPage // for Tc-2
+{
+   @FindBy(id="add")
+   private WebElement addbtn;
+   
+   @FindBy(xpath="//button[text()=' Add to Cart']")
+   private WebElement addtocartbtn;
+   
+   public AddtoCartPage(WebDriver driver)
+   {
+	   PageFactory.initElements(driver, this);
+   }
+
+public WebElement getAddbtn() 
+{
+	return addbtn;
+}
+
+public void Addtocart()
+{
+	addtocartbtn.click();
+}
+}
